@@ -11,10 +11,12 @@ from nltk.tokenize.toktok import ToktokTokenizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report,confusion_matrix,accuracy_score
 from sklearn.model_selection import train_test_split
-#from google.colab import files
+import csv
 import io
-data_to_load = files.upload()
-df = pd.read_csv(io.BytesIO(data_to_load['training_data.csv']))
+#with open('training_data.csv', 'r') as file:
+ #   df = csv.reader(file)
+#data_to_load = files.upload()
+df = pd.read_csv('training_data.csv')
 #clean the text
 def cleanText(txt):
   #remove all the @ symbols (and the usernames/text atached to them)
